@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Environment files
+.env
+*.env
+
+# Virtual environments
+venv/
+env/
+*.sqlite3
+*.db
+
+# DICOM PNG outputs
+static/*.png
+
+# Logs
+*.log
+*.log.*

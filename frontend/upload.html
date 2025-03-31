@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Upload X-ray Images</title>
+  </head>
+  <body class="upload-page">
+    <div class="container">
+      <h1 class="upload-heading">Kindly upload X-Ray images</h1>
+
+      <div class="upload-box">
+        <form action="#" class="upload-form" id="upload-form">
+          <input
+            type="file"
+            id="file-upload"
+            class="file-input"
+            multiple
+            hidden
+            accept=".dic,.dicom,.dcm,.png"
+          />
+
+          <label for="file-upload" class="file-label">
+            <p class="drag-text">Drag & Drop your files here</p>
+            <svg
+              class="upload-icon"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+              ></path>
+            </svg>
+          </label>
+
+          <div id="file-preview" class="file-preview">
+            <p class="preview-text">No files uploaded yet.</p>
+          </div>
+        </form>
+
+        <div class="btn-group">
+          <button id="back-btn" class="btn back-btn">Back</button>
+          <button id="submit-btn" class="btn submit-btn">Upload</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

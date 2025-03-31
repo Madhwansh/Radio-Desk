@@ -1,0 +1,282 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: #030811;
+  color: #fdfdfd;
+  overflow: hidden;
+}
+
+/* ------------------------- */
+/* Welcome Screen Styling */
+/* ------------------------- */
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #020617;
+  overflow: hidden;
+  z-index: 999;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.content {
+  text-align: center;
+  z-index: 10;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #fdfdfd;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #fdfdfd, #787bc0, #5241ae, #7d35d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.description {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #fdfdfd;
+}
+
+/* CTA Button */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border: 1px solid #5c60c6;
+  background: transparent;
+  color: #fdfdfd;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+  background: #5c60c6;
+  color: #030811;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover .arrow {
+  transform: rotate(-45deg);
+}
+
+/* Main App View (Hidden Initially) */
+.hidden {
+  display: none;
+}
+
+/* Stars Effect */
+#stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+/* Aurora Effect */
+.aurora-background {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(125% 125% at 50% 0%, #020617 50%, #1e67c6);
+  animation: aurora 10s infinite alternate;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+@keyframes aurora {
+  0% {
+    background: radial-gradient(125% 125% at 50% 0%, #020617 50%, #e7edeb);
+  }
+  50% {
+    background: radial-gradient(125% 125% at 50% 0%, #020617 50%, #451589);
+  }
+  100% {
+    background: radial-gradient(125% 125% at 50% 0%, #020617 50%, #3633dd);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ------------------------- */
+/* Upload Page Styling */
+/* ------------------------- */
+.upload-page {
+  height: 100vh;
+  background: #030811;
+  color: #fdfdfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 80%;
+  max-width: 900px;
+  padding: 40px;
+  background: #040a1a;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.upload-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fdfdfd;
+}
+
+/* Upload Box */
+.upload-box {
+  background: #020617;
+  border: 2px dashed #5c60c6;
+  border-radius: 8px;
+  padding: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.upload-box:hover {
+  background: #1e293b;
+  border-color: #fdfdfd;
+}
+
+/* File Label */
+.file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 40px 20px;
+}
+
+.upload-icon {
+  width: 64px;
+  height: 64px;
+  color: #5c60c6;
+  transition: transform 0.3s;
+}
+
+.file-label:hover .upload-icon {
+  transform: scale(1.1);
+}
+
+.drag-text {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #fdfdfd;
+  transition: color 0.3s;
+}
+
+/* File Preview */
+.file-preview {
+  margin-top: 20px;
+  text-align: center;
+  color: #5c60c6;
+}
+
+.preview-text {
+  font-size: 16px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.btn {
+  background: #5c60c6;
+  color: #030811;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #0dc997;
+}
+
+/* Back and Submit Buttons */
+.back-btn {
+  background: #fdfdfd;
+  color: #030811;
+}
+
+.back-btn:hover {
+  background: #ddd;
+}
+
+.submit-btn {
+  background: #5c60c6;
+  color: #030811;
+}
+
+.submit-btn:hover {
+  background: #0dc997;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .cta-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 14px;
+  }
+  .cta-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
