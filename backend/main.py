@@ -28,7 +28,7 @@ async def upload_files(files: list[UploadFile] = File(...)):
             raise HTTPException(status_code=500, detail=f"Error processing file {file.filename}: {str(e)}")
 
         # Save file record in database (if using SQLite)
-        relative_path = str(output_path.relative_to(Path(__file__).parent))
+        relative_path = output_path.name  # Just the filename
         record_id = add_file_record(file.filename, relative_path)
         saved_files.append({"id": record_id, "original": file.filename, "path": relative_path})
 

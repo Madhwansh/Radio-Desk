@@ -21,3 +21,6 @@ static/*.png
 # Logs
 *.log
 *.log.*
+
+
+uploads

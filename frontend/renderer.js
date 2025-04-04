@@ -1,4 +1,4 @@
-// 🌌 Welcome Screen Transition
+// Welcome Screen Transition
 const welcomeScreen = document.getElementById("welcome-screen");
 const mainApp = document.getElementById("main-app");
 // When the "Start Analysis" button is clicked, navigate directly to upload.html
@@ -87,6 +87,7 @@ if (fileInput) {
 }
 
 // Upload files to FastAPI backend
+// Upload files to FastAPI backend
 if (uploadBtn) {
   uploadBtn.addEventListener("click", async () => {
     const files = fileInput.files;
@@ -115,6 +116,23 @@ if (uploadBtn) {
 
       // Display success message
       alert(`✅ Successfully uploaded ${files.length} file(s)!`);
+
+      // Create and add analyze button
+      const analyzeBtn = document.createElement('button');
+      analyzeBtn.textContent = 'Go to Analyze';
+      analyzeBtn.className = 'btn analyze-btn';
+      analyzeBtn.style.margin = '20px auto';
+      analyzeBtn.addEventListener('click', async () => {
+        try {
+          // Use the exposed electronAPI instead of window.electron.store
+          await window.electronAPI.storeImages(result.files);
+          window.location.href = 'analysis.html';
+        } catch (error) {
+          console.error('Failed to store images:', error);
+          alert('Failed to store images for analysis');
+        }
+      });
+      document.querySelector('.container').appendChild(analyzeBtn);
 
       // Display converted file names
       filePreview.innerHTML = "";
